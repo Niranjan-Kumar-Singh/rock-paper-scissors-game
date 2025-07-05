@@ -4,9 +4,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock Paper Scissors Game</title>
+
+    <title>Play Rock Paper Scissors Online | Fun & Free Game</title>
+
+    <!-- Theme & Branding -->
+    <meta name="theme-color" content="#081B31" />
+    <meta name="author" content="Niranjan Kumar Singh" />
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Play the classic Rock Paper Scissors game online! Fun, free, and fast. Challenge the computer, track your score, enjoy dark mode and winning confetti.">
+    <meta name="keywords"
+        content="rock paper scissors game, play rock paper scissors online, free rock paper scissors, RPS game, rock paper scissors computer, hand game online, classic web game">
+
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Play Rock Paper Scissors Online | Fun & Free Game" />
+    <meta property="og:description"
+        content="Challenge the computer in a fun and interactive Rock Paper Scissors game. Track your score, toggle dark mode, and celebrate with confetti!" />
+    <meta property="og:image" content="https://rockpaperscissor-niranjan.vercel.app/images/rockPaperScissor.png" />
+    <meta property="og:url" content="https://rockpaperscissor-niranjan.vercel.app/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4208665414964925"
+        crossorigin="anonymous"></script>
+
+    <!-- Confetti Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="KKxnRIS1ajvXZobsLsOcPIogecH-EXAqO1SbS430nac" />
 </head>
 
 <body>
@@ -17,6 +51,29 @@
         <div class="toggle-container">
             <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
             <button id="reset">🔄 Reset</button>
+        </div>
+
+        <div class="help-section">
+            <div class="help-buttons">
+                <button id="toggle-help">❓ How to Play</button>
+                <button id="share-game">📤 Share Game</button>
+                <button id="install-app" style="display: none;" disabled>📲 Add to Home Screen</button>
+            </div>
+
+            <div id="help-content" class="instructions hidden">
+                <h2><span style="margin-right: 0.4rem;">📘</span>How to Play</h2>
+                <p>Rock Paper Scissors is a simple hand game played between two people — in this case, you and the
+                    computer.</p>
+                <ul>
+                    <li><strong>🪨 Rock</strong> beats <strong>✂️ Scissors</strong></li>
+                    <li><strong>📄 Paper</strong> beats <strong>🪨 Rock</strong></li>
+                    <li><strong>✂️ Scissors</strong> beats <strong>📄 Paper</strong></li>
+                </ul>
+                <p>Choose your move by clicking a button. The computer will randomly choose its move. Win more rounds
+                    than the computer to win the match!</p>
+                <p>You can choose “Best of 3”, “5”, or “7” from the dropdown. After the game ends, click “Start New
+                    Game” to play again.</p>
+            </div>
         </div>
 
         <div class="round-select">
@@ -66,13 +123,34 @@
                 <button id="new-game-btn">🎮 Start New Game</button>
             </div>
         </div>
+
+        <div class="challenge-footer">
+            <button id="challenge-friend">🎯 Challenge a Friend</button>
+        </div>
     </main>
 
     <footer class="footer">
         <p>© 2025 Niranjan Kumar Singh. All rights reserved.</p>
+        <p>
+            <a href="/privacy.html">Privacy Policy</a> |
+            <a href="/terms.html">Terms & Conditions</a> |
+            <a href="/sitemap.xml" target="_blank">Sitemap</a>
+        </p>
     </footer>
 
+    <!-- Toast container -->
+    <div id="toast" class="toast hidden" aria-live="polite"></div>
+
     <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log("✅ Service Worker registered"))
+                    .catch(err => console.error("❌ Service Worker registration failed:", err));
+            });
+        }
+    </script>
 </body>
 
 </html>

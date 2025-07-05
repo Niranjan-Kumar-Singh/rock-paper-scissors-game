@@ -10,6 +10,8 @@ const compScorePara = document.querySelector("#comp-score");
 const compImg = document.querySelector("#comp-img");
 const roundText = document.querySelector("#round-text");
 
+let deferredPrompt = null; // For PWA install prompt
+
 const resetGame = () => {
   document.querySelector("#round-selector").disabled = false;
   userScore = 0;
@@ -49,10 +51,17 @@ const showWinner = (userWin, userChoice, compChoice) => {
   }
 };
 
+const launchConfetti = () => {
+  confetti({
+    particleCount: 200,
+    spread: 100,
+    origin: { y: 0.6 },
+  });
+};
+
 const endGame = () => {
   setTimeout(() => {
     const newGameContainer = document.querySelector("#new-game-container");
-    const msgElement = document.querySelector("#msg");
 
     let finalMessage = "";
     let finalColor = "";
@@ -60,11 +69,7 @@ const endGame = () => {
     if (userScore > compScore) {
       finalMessage = "🎉 You won the match!";
       finalColor = "green";
-      confetti({
-        particleCount: 200, // Big burst
-        spread: 100,
-        origin: { y: 0.6 },
-      });
+      launchConfetti();
     } else if (userScore < compScore) {
       finalMessage = "😢 Computer won the match!";
       finalColor = "red";
@@ -73,23 +78,19 @@ const endGame = () => {
       finalColor = "#081B31";
     }
 
-    msgElement.innerText = finalMessage;
-    msgElement.style.backgroundColor = finalColor;
+    msg.innerText = finalMessage;
+    msg.style.backgroundColor = finalColor;
 
-    document
-      .querySelectorAll(".choice")
-      .forEach((btn) => (btn.style.pointerEvents = "none"));
-
-    // Show "new game" beside the message
+    choices.forEach((btn) => (btn.style.pointerEvents = "none"));
     newGameContainer.style.display = "inline-block";
-    newGameContainer.style.marginLeft = "1rem"; // some spacing
+    newGameContainer.style.marginLeft = "1rem";
   }, 500);
 };
 
 const playGame = (userChoice, clickedChoice) => {
   document.querySelector("#round-selector").disabled = true;
 
-  if (round > totalRounds) return;
+  if (round >= totalRounds) return;
 
   const compChoice = genCompChoice();
   if (navigator.vibrate) {
@@ -97,7 +98,6 @@ const playGame = (userChoice, clickedChoice) => {
   }
   compImg.src = `./images/${compChoice}.png`;
 
-  // animation
   clickedChoice.classList.add("selected");
   setTimeout(() => clickedChoice.classList.remove("selected"), 500);
 
@@ -121,7 +121,7 @@ const playGame = (userChoice, clickedChoice) => {
   if (round >= totalRounds) endGame();
 };
 
-// Event listeners
+// Game button listeners
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
     if (round >= totalRounds) return;
@@ -132,20 +132,22 @@ choices.forEach((choice) => {
 
 document.querySelector("#reset").addEventListener("click", () => {
   resetGame();
-  document
-    .querySelectorAll(".choice")
-    .forEach((btn) => (btn.style.pointerEvents = "auto"));
+  choices.forEach((btn) => (btn.style.pointerEvents = "auto"));
 });
 
 document.querySelector("#dark-mode-toggle").addEventListener("click", () => {
   document.body.classList.toggle("dark");
+  // Save mode to localStorage
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
 });
 
 document.querySelector("#new-game-btn").addEventListener("click", () => {
   resetGame();
-  document
-    .querySelectorAll(".choice")
-    .forEach((btn) => (btn.style.pointerEvents = "auto"));
+  choices.forEach((btn) => (btn.style.pointerEvents = "auto"));
   document.querySelector("#new-game-container").style.display = "none";
 });
 
@@ -153,3 +155,76 @@ document.querySelector("#round-selector").addEventListener("change", (e) => {
   totalRounds = parseInt(e.target.value);
   roundText.innerText = `Round: ${round} / ${totalRounds}`;
 });
+
+document.querySelector("#toggle-help").addEventListener("click", () => {
+  document.querySelector("#help-content").classList.toggle("hidden");
+});
+
+// 🆕 Share Game
+document.querySelector("#share-game")?.addEventListener("click", async () => {
+  try {
+    if (navigator.share) {
+      await navigator.share({
+        title: "Rock Paper Scissors Game",
+        text: "Play this fun Rock Paper Scissors game with me!",
+        url: window.location.href,
+      });
+    } else {
+      await navigator.clipboard.writeText(window.location.href);
+      showToast("Link copied to clipboard!");
+    }
+  } catch (err) {
+    console.error("Share failed:", err);
+  }
+});
+
+// 🆕 Challenge Friend (copy link)
+document.querySelector("#challenge-friend")?.addEventListener("click", () => {
+  navigator.clipboard
+    .writeText(window.location.href)
+    .then(() => {
+      showToast("Challenge link copied! Send it to your friend.");
+    })
+    .catch(() => {
+      showToast("Failed to copy the link.");
+    });
+});
+
+// 🆕 Add to Home Screen (A2HS)
+const installBtn = document.getElementById("install-app");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  installBtn.style.display = "inline-block";
+  installBtn.disabled = false;
+
+  // Prevent adding the click event multiple times
+  if (!installBtn._hasClickListener) {
+    installBtn.addEventListener("click", () => {
+      installBtn.style.display = "none";
+
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          console.log("A2HS response:", choiceResult.outcome);
+          deferredPrompt = null;
+        });
+      }
+    });
+
+    installBtn._hasClickListener = true; // mark that listener was added
+  }
+});
+
+const showToast = (message, type = "info", duration = 2500) => {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.className = `toast show ${type}`;
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => (toast.className = "toast hidden"), 400);
+  }, duration);
+};
