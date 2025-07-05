@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Rock Paper Scissors</h1>
+
+    <main>
+        <div class="toggle-container">
+            <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
+            <button id="reset">🔄 Reset</button>
+        </div>
+
+        <div class="round-select">
+            <label for="round-selector">Select Game Type:</label>
+            <select id="round-selector">
+                <option value="3">Best of 3</option>
+                <option value="5" selected>Best of 5</option>
+                <option value="7">Best of 7</option>
+            </select>
+        </div>
+
+        <div class="choices">
+            <div class="choice" id="rock" tabindex="0" aria-label="Rock">
+                <img src="./images/rock.png" alt="Rock">
+            </div>
+            <div class="choice" id="paper" tabindex="1" aria-label="Paper">
+                <img src="./images/paper.png" alt="Paper">
+            </div>
+            <div class="choice" id="scissor" tabindex="2" aria-label="Scissor">
+                <img src="./images/scissor.png" alt="Scissor">
+            </div>
+        </div>
+
+        <div class="score-board">
+            <div class="score">
+                <p id="user-score">0</p>
+                <p>You</p>
+            </div>
+            <div class="score">
+                <p id="comp-score">0</p>
+                <p>Comp</p>
+            </div>
+        </div>
+
+        <div class="round-info">
+            <p id="round-text">Round: 0 / 5</p>
+        </div>
+
+        <div class="comp-display">
+            <p>Computer chose:</p>
+            <img id="comp-img" src="./images/question.png" alt="Computer Choice">
+        </div>
+
+        <div class="msg-container">
+            <p id="msg">Play your move</p>
+            <div id="new-game-container" style="display: none;">
+                <button id="new-game-btn">🎮 Start New Game</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Niranjan Kumar Singh. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
