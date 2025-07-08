@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rockpaperscissor-niranjan.vercel.app/sitemap.xml
+Sitemap: https://rockpaperscissor-niranjan.vercel.app/sitemap-2025.xml
