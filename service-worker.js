@@ -15,7 +15,8 @@ const urlsToCache = [
   '/images/rockPaperScissor-512x512.png',
   '/manifest.json',
   '/rockPaperScissor.png',
-  '/sitemap.xml'
+  '/sitemap-2025.xml',
+  '/ads.txt'
 ];
 
 self.addEventListener('install', event => {
