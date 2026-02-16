@@ -1,4 +1,4 @@
-const CACHE_NAME = 'rps-cache-v1';
+const CACHE_NAME = 'rps-cache-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -15,7 +15,7 @@ const urlsToCache = [
   '/images/rockPaperScissor-512x512.png',
   '/manifest.json',
   '/rockPaperScissor.png',
-  '/sitemap-2025.xml',
+  '/sitemap.xml',
   '/ads.txt'
 ];
 

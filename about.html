@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Professional Rock Paper Scissors Game</title>
+    <meta name="description"
+        content="Learn more about the team behind the best online Rock Paper Scissors game and our mission to provide clean, fun web experiences.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <style>
+        .about-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            text-align: left;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-container p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        body.dark .about-container {
+            background: rgba(30, 30, 30, 0.8);
+            color: #ddd;
+        }
+
+        body.dark .about-container p {
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>About the Project</h1>
+    <main>
+        <div class="about-container">
+            <p>Welcome to <strong>Rock Paper Scissors Online</strong>, a passion project dedicated to bringing classic,
+                simple joy to the modern web. Our mission is to build high-quality, lightweight, and accessible games
+                that anyone can enjoy instantly.</p>
+
+            <p>This game was designed by <strong>Niranjan Kumar Singh</strong>, a web developer focused on creating
+                premium user experiences. We believe that even the simplest games deserve great design and smooth
+                performance.</p>
+
+            <h2>Why We Built This</h2>
+            <p>In a world of complex, heavy applications, we wanted to return to the basics. This project serves as a
+                showcase of modern web technologies—using Vanilla JavaScript, CSS3 animations, and PWA (Progressive Web
+                App) capabilities to ensure you can play even when you're offline.</p>
+
+            <h2>Our Commitment to Quality</h2>
+            <p>We are constantly improving the game based on user feedback. Whether it's adding "Dark Mode" for
+                late-night gaming or implementing "Best of" round selectors, every feature is built with the player in
+                mind.</p>
+
+            <p><a href="/" style="color: #f50057; font-weight: 600; text-decoration: none;">← Back to Game</a></p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Niranjan Kumar Singh. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://instagram.com/niranjan.ks.in" target="_blank">Instagram: @niranjan.ks.in</a>
+        </div>
+        <div class="footer-nav">
+            <a href="/about.html">About Us</a> |
+            <a href="/privacy.html">Privacy Policy</a> |
+            <a href="/terms.html">Terms & Conditions</a> |
+            <a href="/sitemap.xml" target="_blank">Sitemap</a>
+        </div>
+    </footer>
+
+    <script>
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

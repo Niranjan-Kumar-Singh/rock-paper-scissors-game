@@ -41,6 +41,23 @@
 
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="KKxnRIS1ajvXZobsLsOcPIogecH-EXAqO1SbS430nac" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Rock Paper Scissors Online",
+      "operatingSystem": "Web",
+      "applicationCategory": "GameApplication",
+      "description": "A free, fun, and interactive Rock Paper Scissors game with dark mode, score tracking, and strategies.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -73,7 +90,19 @@
                     than the computer to win the match!</p>
                 <p>You can choose “Best of 3”, “5”, or “7” from the dropdown. After the game ends, click “Start New
                     Game” to play again.</p>
+
+                <!-- Instructions Ad Unit -->
+                <div style="margin-top: 20px; text-align: center;">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4208665414964925"
+                        data-ad-slot="PLACEHOLDER_SLOT_ID" data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                </div>
             </div>
+        </div>
+
+        <div class="stats-container">
+            <div>Best Streak: <span id="high-streak">0</span></div>
+            <div>High Score: <span id="total-high-score">0</span></div>
         </div>
 
         <div class="round-select">
@@ -83,6 +112,15 @@
                 <option value="5" selected>Best of 5</option>
                 <option value="7">Best of 7</option>
             </select>
+        </div>
+
+        <div class="ai-mode-container">
+            <span>Casual</span>
+            <label class="switch">
+                <input type="checkbox" id="hard-mode-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="hard-text">Hard Mode</span>
         </div>
 
         <div class="choices">
@@ -98,6 +136,7 @@
         </div>
 
         <div class="score-board">
+            <div id="challenge-badge" class="hidden">Target: 0</div>
             <div class="score">
                 <p id="user-score">0</p>
                 <p>You</p>
@@ -127,15 +166,58 @@
         <div class="challenge-footer">
             <button id="challenge-friend">🎯 Challenge a Friend</button>
         </div>
+
+        <!-- Bottom Ad Unit -->
+        <div style="margin-top: 30px; text-align: center;">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4208665414964925"
+                data-ad-slot="PLACEHOLDER_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Comprehensive SEO Content Section -->
+        <section class="seo-content">
+            <div class="content-card">
+                <h2>Mastering the Game: Rock Paper Scissors Strategy</h2>
+                <p>Rock Paper Scissors (RPS) is more than just a game of luck. It is a game of psychology, patterns, and
+                    probability. While the computer chooses randomly in this version, playing against humans requires a
+                    different set of skills.</p>
+
+                <h3>A Brief History</h3>
+                <p>Originating in China during the Han dynasty, the game was known as "shoushiling." It later evolved in
+                    Japan into "Jan-ken," which is the version most familiar to the world today. It serves as a
+                    universal decision-making tool, used to settle everything from playground disputes to multi-million
+                    dollar business deals.</p>
+
+                <h3>The Mathematics of Winning</h3>
+                <p>Statistically, in a truly random game, each choice has a 33.3% chance of winning. However, human
+                    behavior is rarely random. Studies have shown that:</p>
+                <ul>
+                    <li><strong>Winners Stick:</strong> People who win a round are likely to play the same move again.
+                    </li>
+                    <li><strong>Losers Switch:</strong> People who lose often switch to the next choice in the
+                        "Rock-Paper-Scissors" sequence.</li>
+                    <li><strong>The "Rock" Bias:</strong> Beginners and men, in particular, have a slight statistical
+                        tendency to lead with Rock.</li>
+                </ul>
+
+                <h3>Global Variations</h3>
+                <p>In Japan, the game is called <em>Janken</em>. in Korea, <em>Gawi-Bawi-Bo</em>. Some advanced versions
+                    add more elements, like the famous "Rock Paper Scissors Lizard Spock" made popular by pop culture,
+                    which introduces 10 different outcome possibilities to reduce ties.</p>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
-        <p>© 2025 Niranjan Kumar Singh. All rights reserved.</p>
-        <p>
+        <p>© 2026 Niranjan Kumar Singh. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://instagram.com/niranjan.ks.in" target="_blank">Instagram: @niranjan.ks.in</a>
+        </div>
+        <div class="footer-nav">
+            <a href="/about.html">About Us</a> |
             <a href="/privacy.html">Privacy Policy</a> |
             <a href="/terms.html">Terms & Conditions</a> |
             <a href="/sitemap.xml" target="_blank">Sitemap</a>
-        </p>
+        </div>
     </footer>
 
     <!-- Toast container -->
