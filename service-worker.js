@@ -2,6 +2,7 @@ const CACHE_NAME = 'rps-cache-v2';
 const urlsToCache = [
   '/',
   '/index.html',
+  '/about.html',
   '/style.css',
   '/script.js',
   '/privacy.html',

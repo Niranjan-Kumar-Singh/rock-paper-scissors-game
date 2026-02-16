@@ -2,7 +2,7 @@
   <h1>✊✋✌️ Rock Paper Scissors Game</h1>
 </div>
 
-A simple, fun, and responsive **Rock Paper Scissors** game built using **HTML**, **CSS**, and **JavaScript**. It includes cool features like dark mode, confetti celebration, offline support via PWA, and much more!
+A premium, fun, and highly interactive **Rock Paper Scissors** web application. This project has been transformed from a simple game into a content-rich platform featuring **Pattern-Recognition AI**, **Persistent High Scores**, and a comprehensive **Strategy Guide**.
 
 >[🔗 Play the Game Live](https://rockpaperscissor-niranjan.vercel.app/)
 
@@ -10,26 +10,25 @@ A simple, fun, and responsive **Rock Paper Scissors** game built using **HTML**,
 
 ## 🎮 Features
 
-- ✅ Responsive Design
-- 🌗 Dark/Light Mode Toggle (Persists using `localStorage`)
-- 🧠 Computer AI (Random choice generator)
-- 📱 Add to Home Screen (PWA)
-- 🔋 Playable Offline (via Service Worker)
-- 🥳 Confetti on Win
-- 🧮 Scoreboard and Rounds Selector
-- 📤 Share & Challenge Friend (Web Share API & Clipboard)
-- ⚙️ Smooth animations and modern UI
+- ✅ **Premium UI/UX**: Professional glassmorphism design with 'Outfit' Google Font.
+- 🧠 **Hard Mode AI**: A predictive algorithm that learns player patterns to win.
+- 🎯 **Mission Mode**: Create & share 'Target Score' challenges with friends.
+- 🌗 **Dark/Light Mode**: Seamless toggle that persists using `localStorage`.
+- 📈 **Long-term Stats**: Tracks your "Best Win Streak" and "Total High Score" permanently.
+- 📱 **PWA Support**: Installable on mobile/desktop with service worker offline support.
+- 🥳 **Reveal Suspense**: Shaking animations before results and confetti celebrations on win.
+- 📖 **Strategy Guide**: Full history & math-based strategy section for SEO & content depth.
+- 📤 **Socially Connected**: Integrated sharing and direct Instagram support.
 
 ---
 
 ## 🛠️ Technologies Used
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- [Canvas Confetti](https://www.npmjs.com/package/canvas-confetti) (for win effects)
-- Service Worker (for caching)
-- Manifest & `robots.txt` for PWA + SEO
+- HTML5 & CSS3 (Custom Glassmorphism)
+- JavaScript (Vanilla ES6+)
+- [Canvas Confetti](https://www.npmjs.com/package/canvas-confetti)
+- JSON-LD Structured Data (for SEO)
+- Service Worker & PWA Manifest
 - Hosted on [Vercel](https://vercel.com/)
 
 ---
@@ -66,16 +65,17 @@ npx serve .
 
 ```
 rock-paper-scissor-game/
-├── images/
-├── index.html
-├── style.css
-├── script.js
-├── privacy.html
-├── terms.html
-├── manifest.json
-├── service-worker.js
-├── robots.txt
-├── sitemap.xml
+├── images/           # High-quality hand assets & icons
+├── index.html        # Main Game & Strategy Guide
+├── about.html        # Project & Creator info
+├── privacy.html      # Legal - Privacy Policy
+├── terms.html        # Legal - Terms & Conditions
+├── style.css         # Premium design system
+├── script.js         # Core Game & AI Logic
+├── manifest.json     # PWA Configuration
+├── service-worker.js # Offline Caching & PWA logic
+├── robots.txt        # Crawler instructions
+├── sitemap.xml       # SEO Sitemap
 └── README.md
 ```
 
@@ -101,12 +101,18 @@ We don’t collect or store personal data. See [Privacy Policy](privacy.html).
 
 This project is licensed under the [MIT License](LICENSE).
 
-© 2025 [Niranjan Kumar Singh](https://niranjankumarsingh.vercel.app/)
+© 2026 [Niranjan Kumar Singh](https://niranjankumarsingh.vercel.app/)
 
 ---
 
 ## 📬 Contact
 
->📧 [niranjansingh1419@gmail.com](mailto:niranjansingh1419@gmail.com)
+>📸 **Instagram**: [@niranjan.ks.in](https://instagram.com/niranjan.ks.in)
 
->🌐 [Visit Live Game](https://rockpaperscissor-niranjan.vercel.app/)
+>📧 **Email**: [niranjansingh1419@gmail.com](mailto:niranjansingh1419@gmail.com)
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ by Niranjan Kumar Singh</sub>
+</div>
