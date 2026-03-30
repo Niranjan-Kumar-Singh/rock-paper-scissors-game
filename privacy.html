@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Privacy Policy | Rock Paper Scissors Game</title>
+  <title>Privacy Policy | Rock Paper Scissors Online Game</title>
 
   <!-- SEO -->
   <meta name="description"
-    content="Read the privacy policy for the Rock Paper Scissors game. Learn how your data is handled and protected.">
+    content="Read the complete privacy policy for Rock Paper Scissors Online. Understand what data is collected, how cookies work, how Google AdSense operates on this site, and your rights as a user.">
   <meta name="author" content="Niranjan Kumar Singh">
 
   <!-- Google Search Console Verification -->
@@ -26,7 +26,8 @@
   <link rel="stylesheet" href="style.css?v=2" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" />
 
-  <!-- Google AdSense -->
+  <!-- Dark Mode Init -->
+  <script src="dark-mode-init.js"></script>
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4208665414964925"
@@ -54,21 +55,58 @@
       line-height: 1.8;
     }
 
+    main p {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+
     main h2 {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      color: #081B31;
+      font-size: 1.35rem;
+    }
+
+    main h3 {
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #f50057;
+      font-size: 1.1rem;
+    }
+
+    main ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    main li {
+      margin-bottom: 0.4rem;
     }
 
     main a {
-      color: #081B31;
+      color: #f50057;
       text-decoration: underline;
     }
 
-    body.dark {
+    .last-updated {
+      background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+      border-radius: 0.8rem;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    html.dark {
       background-color: #121212;
       color: #ddd;
     }
 
-    body.dark main {
+    html.dark main {
       background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
       border: 2px solid #444;
       border-left: 6px solid #ff4081;
@@ -76,13 +114,26 @@
       box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
     }
 
-    body.dark main h2,
-    body.dark main a {
-      color: #fff;
+    html.dark main p,
+    html.dark main ul {
+      color: #bbb;
     }
 
-    body.dark main a {
+    html.dark main h2 {
       color: #90caf9;
+    }
+
+    html.dark main h3 {
+      color: #ff4081;
+    }
+
+    html.dark main a {
+      color: #ff4081;
+    }
+
+    html.dark .last-updated {
+      background: linear-gradient(135deg, #1a2a3a, #2a1a2a);
+      color: #aaa;
     }
 
     .footer {
@@ -106,45 +157,153 @@
       color: #ffca28;
     }
 
-    body.dark .footer {
+    html.dark .footer {
       background-color: #222;
       color: #ddd;
     }
 
-    body.dark .footer a {
+    html.dark .footer a {
       color: #ccc;
     }
 
-    body.dark .footer a:hover {
+    html.dark .footer a:hover {
       color: #ffca28;
     }
   </style>
 </head>
 
 <body>
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="logo">
+      <a href="/">✌️ RPS Online</a>
+    </div>
+    <nav class="main-nav" style="display: flex; gap: 1rem; align-items: center;">
+      <button id="dark-mode-toggle-nav" class="dark-mode-toggle"
+        style="background: none; border: none; font-size: 1.2rem; cursor: pointer; padding: 0.2rem; margin-right: 1rem;"
+        aria-label="Toggle Dark Mode">🌙</button>
+      <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; align-items: center;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/strategies.html">Strategies</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
   <h1>Privacy Policy</h1>
   <main>
-    <p>We take your privacy seriously. This policy outlines what data is (and isn't) collected while using this game.
-    </p>
 
-    <h2>1. No Personal Data Collected</h2>
-    <p>The game runs completely in your browser. We do not collect, store, or transmit any personal data or identifying
-      information.</p>
+    <div class="last-updated">📅 Last Updated: <strong>March 31, 2026</strong></div>
 
-    <h2>2. Cookies</h2>
-    <p>We may use minimal cookies for gameplay state or preferences like dark mode. These are not used for tracking or
-      advertising.</p>
+    <p>At <strong>Rock Paper Scissors Online</strong>, your privacy is a top priority. This Privacy Policy explains in
+      clear language exactly what information is (and is not) collected, how your data is handled, what third-party
+      services operate on this site, and what rights you have as a visitor. Please read this document carefully.</p>
 
-    <h2>3. Analytics & Ads</h2>
-    <p>If analytics tools or ads are used (like Google AdSense), they may use anonymized cookies to improve services or
-      display relevant ads.</p>
+    <h2>1. Information We Collect</h2>
 
-    <h2>4. Your Control</h2>
-    <p>You can clear cookies from your browser to reset the game state or disable analytics (via browser extensions or
-      settings).</p>
+    <h3>1a. Information You Voluntarily Provide</h3>
+    <p>If you contact us via the <a href="/contact.html">Contact page</a>, you may voluntarily provide your name and
+      email address. This information is used solely to respond to your message and is never shared with third parties
+      for marketing purposes.</p>
 
-    <h2>5. Updates</h2>
-    <p>We may update this policy from time to time. Please review it occasionally.</p>
+    <h3>1b. Automatically Collected Technical Data</h3>
+    <p>Like most websites, our hosting provider (Vercel) may automatically collect basic server access logs. These logs
+      may include your IP address, browser type, operating system, the page you accessed, and the time of your visit.
+      This data is used strictly for server security, error diagnosis, and uptime monitoring. We do not sell or share
+      this data with advertisers.</p>
+
+    <h2>2. Game Data and Local Storage</h2>
+    <p>The game stores the following data <strong>exclusively in your browser's Local Storage</strong>. This data never
+      leaves your device and is never transmitted to our servers:</p>
+    <ul>
+      <li><strong>Dark/Light Mode preference</strong> — so your preferred theme persists between sessions</li>
+      <li><strong>High Score and Best Win Streak</strong> — so your personal records are saved across visits</li>
+      <li><strong>Service Worker Cache</strong> — so the game is available offline after your first visit</li>
+    </ul>
+    <p>You can clear all Local Storage data at any time through your browser's developer tools or by clearing your
+      browsing data. Doing so will reset your high score, win streak, and theme preference.</p>
+
+    <h2>3. Cookies</h2>
+
+    <h3>3a. First-Party Cookies</h3>
+    <p>We do not set any custom first-party tracking cookies on this website. The only browser storage we use is
+      Local Storage (not cookies) for the game preferences described above.</p>
+
+    <h3>3b. Third-Party Cookies (Google AdSense)</h3>
+    <p>This website uses <strong>Google AdSense</strong> to display advertisements. Google AdSense may set its own
+      cookies on your browser to serve personalized or non-personalized ads based on your browsing history across the
+      web. These cookies are governed entirely by <a href="https://policies.google.com/privacy" target="_blank"
+        rel="noopener noreferrer">Google's Privacy Policy</a>.</p>
+    <p>Common cookie names set by Google AdSense include but are not limited to:</p>
+    <ul>
+      <li><strong>IDE</strong> — Used by Google DoubleClick to register and report user actions after viewing or
+        clicking an ad (duration: up to 1 year)</li>
+      <li><strong>DSID</strong> — Used to identify a signed-in user on non-Google sites (duration: 2 weeks)</li>
+      <li><strong>__gads</strong> — Set by Google Ad Manager to store information about how the user uses the website
+        for advertising purposes (duration: up to 2 years)</li>
+    </ul>
+
+    <h3>3c. Opting Out of Ad Personalization</h3>
+    <p>You can opt out of personalized advertising from Google by visiting
+      <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ad Settings</a>.
+      You can also manage or disable cookies globally through your browser settings. Note that disabling cookies may
+      affect how some parts of this website function.</p>
+
+    <!-- Ad Unit -->
+    <div style="margin: 2rem 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4208665414964925"
+        data-ad-slot="1712602490" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <h2>4. Third-Party Services</h2>
+    <p>This website uses the following third-party services, each operating under their own privacy policies:</p>
+    <ul>
+      <li><strong>Google AdSense</strong> — Advertising platform. <a
+          href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+      <li><strong>Vercel</strong> — Hosting and CDN provider. <a
+          href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </li>
+      <li><strong>Google Fonts</strong> — Typography delivery. Loads font files from Google's servers; Google may log
+        request metadata per their privacy policy.</li>
+      <li><strong>canvas-confetti (jsDelivr CDN)</strong> — Open-source confetti animation library used on win
+        screens. No tracking or data collection involved.</li>
+    </ul>
+
+    <h2>5. Children's Privacy</h2>
+    <p>This website is appropriate for general audiences including children. We do not knowingly collect any personal
+      information from children under the age of 13 (or under 16 in the European Union). The game does not require
+      account creation or personal information submission to play.</p>
+    <p>However, because Google AdSense is active on this site, parents and guardians are advised to supervise
+      younger children's browsing, as ad content is served algorithmically by Google and is not individually reviewed
+      by us. For ad-free browsing, consider using a browser with an ad-blocker extension installed.</p>
+
+    <h2>6. Your Rights (GDPR / CCPA)</h2>
+    <p>Depending on your location, you may have rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Right to Access:</strong> Request a copy of any personal data we hold about you (e.g., contact
+        messages you sent us).</li>
+      <li><strong>Right to Deletion:</strong> Request erasure of any personal data we have stored.</li>
+      <li><strong>Right to Opt-Out:</strong> Opt out of ad personalization via Google Ad Settings.</li>
+      <li><strong>Right to Portability:</strong> Request your personal data in a portable format.</li>
+      <li><strong>California Residents (CCPA):</strong> You have the right to know what personal information is
+        collected, used, shared, or sold, and to opt out of its sale. We do not sell personal information.</li>
+    </ul>
+    <p>To exercise any of these rights, please contact us at
+      <a href="mailto:niranjansingh1419@gmail.com">niranjansingh1419@gmail.com</a>.</p>
+
+    <h2>7. Data Security</h2>
+    <p>While no online transmission is 100% secure, we take reasonable technical precautions to protect your
+      information. Our site is served over HTTPS encryption, and we regularly monitor for security vulnerabilities. All
+      game data is stored locally on your own device, minimizing any centralized data exposure risk.</p>
+
+    <h2>8. Updates to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal
+      obligations. When we make significant changes, we will update the "Last Updated" date at the top of this page.
+      We encourage you to review this policy periodically. Continued use of this website after a policy update
+      constitutes your acceptance of the revised terms.</p>
 
     <p><strong>Contact Us:</strong> <a href="mailto:niranjansingh1419@gmail.com">niranjansingh1419@gmail.com</a></p>
 
@@ -159,17 +318,13 @@
     <div class="footer-nav">
       <a href="/about.html">About Us</a> |
       <a href="/privacy.html">Privacy Policy</a> |
-      <a href="/terms.html">Terms & Conditions</a> |
+      <a href="/terms.html">Terms &amp; Conditions</a> |
+      <a href="/disclaimer.html">Disclaimer</a> |
       <a href="/sitemap.xml" target="_blank">Sitemap</a>
     </div>
   </footer>
 
-  <script>
-    // Apply saved dark mode preference
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
-    }
-  </script>
+  <script src="ui.js"></script>
 </body>
 
 </html>

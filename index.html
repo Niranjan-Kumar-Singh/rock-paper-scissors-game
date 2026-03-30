@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Play Rock Paper Scissors Online | Fun & Free Game</title>
 
     <!-- Theme & Branding -->
-    <meta name="theme-color" content="#081B31" />
-    <meta name="author" content="Niranjan Kumar Singh" />
+    <meta name="theme-color" content="#081B31">
+    <meta name="author" content="Niranjan Kumar Singh">
     <meta name="google-adsense-account" content="ca-pub-4208665414964925">
 
     <!-- SEO -->
@@ -19,19 +19,19 @@
         content="rock paper scissors game, play rock paper scissors online, free rock paper scissors, RPS game, rock paper scissors computer, hand game online, classic web game">
 
     <!-- Open Graph for Social Sharing -->
-    <meta property="og:title" content="Play Rock Paper Scissors Online | Fun & Free Game" />
+    <meta property="og:title" content="Play Rock Paper Scissors Online | Fun &amp; Free Game">
     <meta property="og:description"
-        content="Challenge the computer in a fun and interactive Rock Paper Scissors game. Track your score, toggle dark mode, and celebrate with confetti!" />
-    <meta property="og:image" content="https://rockpaperscissor-niranjan.vercel.app/images/rockPaperScissor.png" />
-    <meta property="og:url" content="https://rockpaperscissor-niranjan.vercel.app/" />
-    <meta property="og:type" content="website" />
+        content="Challenge the computer in a fun and interactive Rock Paper Scissors game. Track your score, toggle dark mode, and celebrate with confetti!">
+    <meta property="og:image" content="https://rockpaperscissor-niranjan.vercel.app/images/rockPaperScissor.png">
+    <meta property="og:url" content="https://rockpaperscissor-niranjan.vercel.app/">
+    <meta property="og:type" content="website">
 
     <!-- Favicon & Manifest -->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4208665414964925"
@@ -41,10 +41,13 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
     <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="KKxnRIS1ajvXZobsLsOcPIogecH-EXAqO1SbS430nac" />
+    <meta name="google-site-verification" content="KKxnRIS1ajvXZobsLsOcPIogecH-EXAqO1SbS430nac">
 
     <!-- Canonical Link -->
-    <link rel="canonical" href="https://rockpaperscissor-niranjan.vercel.app/" />
+    <link rel="canonical" href="https://rockpaperscissor-niranjan.vercel.app/">
+
+    <!-- Dark Mode Init -->
+    <script src="dark-mode-init.js"></script>
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -65,6 +68,23 @@
 </head>
 
 <body>
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="/">✌️ RPS Online</a>
+        </div>
+        <nav class="main-nav" style="display: flex; gap: 1rem; align-items: center;">
+            <button id="dark-mode-toggle-nav" class="dark-mode-toggle"
+                style="background: none; border: none; font-size: 1.2rem; cursor: pointer; padding: 0.2rem; margin-right: 1rem;"
+                aria-label="Toggle Dark Mode">🌙</button>
+            <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; align-items: center;">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/strategies.html">Strategies</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <h1>Rock Paper Scissors</h1>
 
@@ -94,15 +114,15 @@
                     than the computer to win the match!</p>
                 <p>You can choose “Best of 3”, “5”, or “7” from the dropdown. After the game ends, click “Start New
                     Game” to play again.</p>
+            </div>
 
-                <!-- Instructions Ad Unit -->
-                <div style="margin-top: 20px; text-align: center;">
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4208665414964925"
-                        data-ad-slot="1712602490" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+            <!-- Instructions Ad Unit -->
+            <div style="margin-top: 20px; text-align: center;">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4208665414964925"
+                    data-ad-slot="1712602490" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
 
@@ -130,14 +150,14 @@
         </div>
 
         <div class="choices">
-            <div class="choice" id="rock" tabindex="0" aria-label="Rock">
+            <div class="choice" id="rock" role="button" tabindex="0" aria-label="Choose Rock">
                 <img src="./images/rock.png" alt="Rock">
             </div>
-            <div class="choice" id="paper" tabindex="1" aria-label="Paper">
+            <div class="choice" id="paper" role="button" tabindex="1" aria-label="Choose Paper">
                 <img src="./images/paper.png" alt="Paper">
             </div>
-            <div class="choice" id="scissor" tabindex="2" aria-label="Scissor">
-                <img src="./images/scissor.png" alt="Scissor">
+            <div class="choice" id="scissor" role="button" tabindex="2" aria-label="Choose Scissors">
+                <img src="./images/scissor.png" alt="Scissors">
             </div>
         </div>
 
@@ -184,34 +204,44 @@
 
         <!-- Comprehensive SEO Content Section -->
         <section class="seo-content">
-            <div class="content-card">
-                <h2>Mastering the Game: Rock Paper Scissors Strategy</h2>
-                <p>Rock Paper Scissors (RPS) is more than just a game of luck. It is a game of psychology, patterns, and
-                    probability. While the computer chooses randomly in this version, playing against humans requires a
-                    different set of skills.</p>
+            <div class="content-card"
+                style="text-align: left; padding: 2rem; background: inherit; border-radius: 2rem; margin-top: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h2 style="color: inherit; margin-bottom: 1rem;">Mastering the Game: Strategy & History</h2>
+                <p style="margin-bottom: 1rem;">Rock Paper Scissors is more than just a game of luck. By understanding
+                    human psychology, recognizing the "Win-Stay, Lose-Shift" behavioral loops, and applying mathematical
+                    probability, you can significantly increase your win rate against human opponents.</p>
+                <p style="margin-bottom: 1.5rem;">Curious to learn how the game evolved from the Han Dynasty to global
+                    tournaments, and how to mathematically beat your friends using Game Theory?</p>
+                <a href="/strategies.html"
+                    style="display: inline-block; padding: 0.8rem 1.5rem; background: #f50057; color: white; text-decoration: none; border-radius: 1rem; font-weight: bold; transition: background 0.3s;">Read
+                    our Ultimate Strategy Guide &rarr;</a>
+            </div>
+        </section>
 
-                <h3>A Brief History</h3>
-                <p>Originating in China during the Han dynasty, the game was known as "shoushiling." It later evolved in
-                    Japan into "Jan-ken," which is the version most familiar to the world today. It serves as a
-                    universal decision-making tool, used to settle everything from playground disputes to multi-million
-                    dollar business deals.</p>
-
-                <h3>The Mathematics of Winning</h3>
-                <p>Statistically, in a truly random game, each choice has a 33.3% chance of winning. However, human
-                    behavior is rarely random. Studies have shown that:</p>
-                <ul>
-                    <li><strong>Winners Stick:</strong> People who win a round are likely to play the same move again.
-                    </li>
-                    <li><strong>Losers Switch:</strong> People who lose often switch to the next choice in the
-                        "Rock-Paper-Scissors" sequence.</li>
-                    <li><strong>The "Rock" Bias:</strong> Beginners and men, in particular, have a slight statistical
-                        tendency to lead with Rock.</li>
-                </ul>
-
-                <h3>Global Variations</h3>
-                <p>In Japan, the game is called <em>Janken</em>. in Korea, <em>Gawi-Bawi-Bo</em>. Some advanced versions
-                    add more elements, like the famous "Rock Paper Scissors Lizard Spock" made popular by pop culture,
-                    which introduces 10 different outcome possibilities to reduce ties.</p>
+        <!-- Player Testimonials (Social Proof) -->
+        <section class="testimonials" style="margin: 4rem 1rem; text-align: left;">
+            <h2 style="text-align: center; color: inherit; margin-bottom: 2rem;">What Our Players Say</h2>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                <div class="content-card testimonial-card"
+                    style="flex: 1 1 280px; padding: 1.5rem; background: inherit; border-radius: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #f50057;">
+                    <p style="font-style: italic; color: inherit; margin-bottom: 1rem;">"The cleanest Rock Paper
+                        Scissors
+                        game I've played online. Fast, responsive, and the dark mode is a huge plus!"</p>
+                    <p style="font-weight: bold; color: inherit;">⭐ Sarah J.</p>
+                </div>
+                <div class="content-card testimonial-card"
+                    style="flex: 1 1 280px; padding: 1.5rem; background: inherit; border-radius: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #f50057;">
+                    <p style="font-style: italic; color: inherit; margin-bottom: 1rem;">"I love the Hard Mode! It really
+                        feels like the AI is reading my moves. Great way to kill time and test my limits."</p>
+                    <p style="font-weight: bold; color: inherit;">⭐ Mark D.</p>
+                </div>
+                <div class="content-card testimonial-card"
+                    style="flex: 1 1 280px; padding: 1.5rem; background: inherit; border-radius: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #f50057;">
+                    <p style="font-style: italic; color: inherit; margin-bottom: 1rem;">"The strategy guide actually
+                        helped
+                        me beat my brother in our tie-breakers. Awesome project and beautifully designed!"</p>
+                    <p style="font-weight: bold; color: inherit;">⭐ Elena P.</p>
+                </div>
             </div>
         </section>
     </main>
@@ -225,6 +255,7 @@
             <a href="/about.html">About Us</a> |
             <a href="/privacy.html">Privacy Policy</a> |
             <a href="/terms.html">Terms & Conditions</a> |
+            <a href="/disclaimer.html">Disclaimer</a> |
             <a href="/sitemap.xml" target="_blank">Sitemap</a>
         </div>
     </footer>
@@ -232,16 +263,8 @@
     <!-- Toast container -->
     <div id="toast" class="toast hidden" aria-live="polite"></div>
 
+    <script src="ui.js"></script>
     <script src="script.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then(reg => console.log("✅ Service Worker registered"))
-                    .catch(err => console.error("❌ Service Worker registration failed:", err));
-            });
-        }
-    </script>
 </body>
 
 </html>

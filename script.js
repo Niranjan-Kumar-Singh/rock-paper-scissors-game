@@ -63,7 +63,8 @@ const genCompChoice = () => {
 const drawGame = (compChoice) => {
   msg.innerText = `DRAW!!!😥 Both selected ${compChoice}`;
   msg.style.backgroundColor = "#081B31";
-  currentStreak = 0; // Reset streak on draw
+  currentStreak = 0;
+  showToast(`🤝 DRAW! Both chose ${compChoice}`, "info", 2000);
 };
 
 const updateStats = () => {
@@ -86,12 +87,14 @@ const showWinner = (userWin, userChoice, compChoice) => {
     userScorePara.innerText = userScore;
     msg.innerText = `You Win 👍 ${userChoice} beats ${compChoice}`;
     msg.style.backgroundColor = "green";
+    showToast(`✅ You Win! ${userChoice} beats ${compChoice}`, "success", 2000);
   } else {
     compScore++;
-    currentStreak = 0; // Reset streak on loss
+    currentStreak = 0;
     compScorePara.innerText = compScore;
     msg.innerText = `You Lost 👎 ${compChoice} beats ${userChoice}`;
     msg.style.backgroundColor = "red";
+    showToast(`❌ You Lost! ${compChoice} beats ${userChoice}`, "error", 2000);
   }
   updateStats();
 };
@@ -110,31 +113,42 @@ const endGame = () => {
 
     let finalMessage = "";
     let finalColor = "";
+    let toastMsg = "";
+    let toastType = "info";
 
     if (userScore > compScore) {
       finalMessage = "🎉 You won the match!";
       finalColor = "green";
+      toastMsg = `🏆 Match Won! Final score: You ${userScore} — ${compScore} Comp`;
+      toastType = "success";
       launchConfetti();
 
-      // Mission check
       if (targetScore !== null) {
         if (userScore > targetScore) {
           finalMessage = `🔥 EPIC! You beat the challenge of ${targetScore}!`;
-          launchConfetti(); // Double confetti for challenge win
+          toastMsg = `🔥 Challenge CRUSHED! You scored ${userScore}, needed ${targetScore + 1}`;
+          launchConfetti();
         } else {
           finalMessage = `🥈 Good try! But you didn't beat the score of ${targetScore}.`;
+          toastMsg = `🥈 Close! You scored ${userScore} but needed ${targetScore + 1}`;
+          toastType = "info";
         }
       }
     } else if (userScore < compScore) {
       finalMessage = "😢 Computer won the match!";
       finalColor = "red";
+      toastMsg = `😢 Match Lost! Final score: You ${userScore} — ${compScore} Comp`;
+      toastType = "error";
 
       if (targetScore !== null) {
         finalMessage = `💔 Failed! You needed ${targetScore + 1} to beat the challenge.`;
+        toastMsg = `💔 Challenge Failed! Needed ${targetScore + 1}, got ${userScore}`;
       }
     } else {
       finalMessage = "😐 It's a draw!";
       finalColor = "#081B31";
+      toastMsg = `😐 Match Draw! Both scored ${userScore}`;
+      toastType = "info";
     }
 
     msg.innerText = finalMessage;
@@ -143,6 +157,9 @@ const endGame = () => {
     choices.forEach((btn) => (btn.style.pointerEvents = "none"));
     newGameContainer.style.display = "inline-block";
     newGameContainer.style.marginLeft = "1rem";
+
+    // Delay match-end toast slightly so it doesn't overlap the round toast
+    setTimeout(() => showToast(toastMsg, toastType, 4000), 300);
   }, 500);
 };
 
@@ -211,15 +228,7 @@ document.querySelector("#reset").addEventListener("click", () => {
   choices.forEach((btn) => (btn.style.pointerEvents = "auto"));
 });
 
-document.querySelector("#dark-mode-toggle").addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  // Save mode to localStorage
-  if (document.body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-  } else {
-    localStorage.setItem("theme", "light");
-  }
-});
+// Dark mode toggle is handled globally by ui.js
 
 document.querySelector("#new-game-btn").addEventListener("click", () => {
   resetGame();
@@ -371,13 +380,4 @@ window.addEventListener("beforeinstallprompt", (e) => {
   }
 });
 
-const showToast = (message, type = "info", duration = 2500) => {
-  const toast = document.getElementById("toast");
-  toast.textContent = message;
-  toast.className = `toast show ${type}`;
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-    setTimeout(() => (toast.className = "toast hidden"), 400);
-  }, duration);
-};
+// showToast is defined in ui.js (loaded before this script)

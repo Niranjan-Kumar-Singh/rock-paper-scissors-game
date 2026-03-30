@@ -24,6 +24,76 @@ body {
     flex-direction: column;
 }
 
+/* --- Main Navigation Header --- */
+.main-header {
+    background: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+html.dark .main-header {
+    background: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.main-header .logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #081B31;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+html.dark .main-header .logo a {
+    color: #fff;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #081B31;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #f50057;
+}
+
+html.dark .main-nav a {
+    color: #ddd;
+}
+
+html.dark .main-nav a:hover,
+html.dark .main-nav a.active {
+    color: #f50057;
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
+
 main {
     flex: 1;
     width: 100%;
@@ -94,17 +164,17 @@ button {
     background-color: #062045;
 }
 
-body.dark .help-buttons button {
+html.dark .help-buttons button {
     background-color: #333;
     color: white;
     border: 1px solid #555;
 }
 
-body.dark .help-buttons button:hover {
+html.dark .help-buttons button:hover {
     background-color: #444;
 }
 
-body.dark .help-section {
+html.dark .help-section {
     margin: 2rem auto;
     width: 90%;
     max-width: 700px;
@@ -155,7 +225,7 @@ body.dark .help-section {
 }
 
 /* Dark mode styling */
-body.dark #help-content {
+html.dark #help-content {
     background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
     border: 2px solid #444;
     border-left: 6px solid #ff4081;
@@ -163,8 +233,8 @@ body.dark #help-content {
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
 }
 
-body.dark #help-content h2,
-body.dark #help-content p {
+html.dark #help-content h2,
+html.dark #help-content p {
     color: #fff;
 }
 
@@ -186,7 +256,7 @@ body.dark #help-content p {
     margin-left: 0.3rem;
 }
 
-body.dark .stats-container {
+html.dark .stats-container {
     color: #ccc;
 }
 
@@ -206,7 +276,7 @@ body.dark .stats-container {
     transition: color 0.3s ease;
 }
 
-body.dark .ai-mode-container .hard-text {
+html.dark .ai-mode-container .hard-text {
     color: #ccc;
 }
 
@@ -319,6 +389,11 @@ input:checked+.slider:before {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+html.dark .choice {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+}
+
 .choice:active {
     transform: scale(0.9);
 }
@@ -328,6 +403,10 @@ input:checked+.slider:before {
     background-color: #f0f7ff;
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(8, 27, 49, 0.15);
+}
+
+html.dark .choice:hover {
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
 .choice.selected {
@@ -437,6 +516,12 @@ button,
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+html.dark .score-board {
+    background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
+    border: 2px solid #444;
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+}
+
 #challenge-badge {
     position: absolute;
     top: -15px;
@@ -452,7 +537,7 @@ button,
     z-index: 10;
 }
 
-body.dark #challenge-badge {
+html.dark #challenge-badge {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -468,6 +553,15 @@ body.dark #challenge-badge {
     font-weight: 600;
     font-size: 0.9rem;
     color: #555;
+}
+
+html.dark #user-score,
+html.dark #comp-score {
+    color: #ff4081;
+}
+
+html.dark .score {
+    color: #fff;
 }
 
 .msg-container {
@@ -525,24 +619,52 @@ body.dark #challenge-badge {
     font-size: 1.2rem;
 }
 
-/* Dark mode */
-body.dark {
+/* Dark mode — MUST target body explicitly to override body { color: #081B31 } */
+html.dark,
+html.dark body {
     background-color: #121212;
-    color: white;
+    color: #ddd;
 }
 
-body.dark h1,
-body.dark #msg {
+/* Round info and labels */
+html.dark .round-info,
+html.dark .round-info p,
+html.dark .round-select label,
+html.dark .comp-display p,
+html.dark .stats-container div {
+    color: #ccc;
+}
+
+/* Round selector dropdown */
+html.dark #round-selector {
+    background-color: #2a2a2a;
+    color: #ddd;
+    border-color: #555;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23ddd' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+/* AI mode container text */
+html.dark .ai-mode-container {
+    color: #ccc;
+}
+
+/* Score labels (You / Comp) */
+html.dark .score p:last-child {
+    color: #aaa;
+}
+
+html.dark h1,
+html.dark #msg {
     background-color: #222;
 }
 
-body.dark button {
+html.dark button {
     background-color: #333;
     color: #fff;
     border: 1px solid #555;
 }
 
-body.dark button:hover {
+html.dark button:hover {
     background-color: #444;
 }
 
@@ -566,13 +688,13 @@ body.dark button:hover {
     background-color: #062045;
 }
 
-body.dark .challenge-footer button {
+html.dark .challenge-footer button {
     background-color: #333;
     color: white;
     border: 1px solid #555;
 }
 
-body.dark .challenge-footer button:hover {
+html.dark .challenge-footer button:hover {
     background-color: #444;
 }
 
@@ -626,7 +748,7 @@ body.dark .challenge-footer button:hover {
     text-decoration: underline;
 }
 
-body.dark .footer {
+html.dark .footer {
     color: #ddd;
 }
 
@@ -642,65 +764,96 @@ body.dark .footer {
     color: #ffca28;
 }
 
-body.dark .footer a {
+html.dark .footer a {
     color: #ddd;
 }
 
-body.dark .footer a:hover {
+html.dark .footer a:hover {
     color: #ffca28;
+}
+
+/* ===== TOAST NOTIFICATION ===== */
+@keyframes toastSlideIn {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(-30px) scale(0.92); }
+    60%  { transform: translateX(-50%) translateY(4px) scale(1.02); }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+@keyframes toastSlideOut {
+    0%   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-20px) scale(0.92); }
 }
 
 .toast {
     position: fixed;
-    top: 4.5rem;
-    right: 1.2rem;
-    background-color: #323232;
+    top: 5.2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-30px) scale(0.92);
     color: #fff;
-    padding: 0.8rem 1.2rem;
-    border-radius: 0.5rem;
+    padding: 0.85rem 2rem;
+    border-radius: 3rem;
     font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    z-index: 1000;
-    transform: translateY(-10px);
-    /* move it up initially */
+    z-index: 9999;
+    white-space: nowrap;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.02em;
+    max-width: 90vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 2px solid transparent;
 }
 
 .toast.show {
-    opacity: 1;
-    transform: translateY(0);
-    /* slide in from top */
+    animation: toastSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     pointer-events: auto;
 }
 
+/* TYPE COLORS */
 .toast.success {
-    background-color: #4caf50;
-    /* Green */
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    border-color: #43a047;
 }
 
 .toast.error {
-    background-color: #f44336;
-    /* Red */
+    background: linear-gradient(135deg, #7f0000, #c62828);
+    border-color: #e53935;
+}
+
+.toast.warning {
+    background: linear-gradient(135deg, #e65100, #f57c00);
+    border-color: #ffa726;
+    color: #fff;
 }
 
 .toast.info {
-    background-color: #323232;
+    background: linear-gradient(135deg, #0d47a1, #1565c0);
+    border-color: #42a5f5;
 }
 
-body.dark .toast.success {
-    background-color: #81c784;
-    color: #111;
+/* No separate dark mode needed — toast always has colored bg regardless of theme */
+html.dark .toast.success {
+    background: linear-gradient(135deg, #1b5e20, #388e3c);
+    border-color: #66bb6a;
 }
 
-body.dark .toast.error {
-    background-color: #e57373;
-    color: #111;
+html.dark .toast.error {
+    background: linear-gradient(135deg, #7f0000, #b71c1c);
+    border-color: #ef5350;
 }
 
-body.dark .toast {
-    background-color: #eee;
-    color: #111;
+html.dark .toast.warning {
+    background: linear-gradient(135deg, #bf360c, #e64a19);
+    border-color: #ff7043;
+}
+
+html.dark .toast.info {
+    background: linear-gradient(135deg, #0a2472, #1a237e);
+    border-color: #5c6bc0;
 }
 
 /* Responsive */
@@ -811,7 +964,7 @@ body.dark .toast {
     background: #fdfdff;
 }
 
-body.dark .seo-content {
+html.dark .seo-content {
     background: #0f0f0f;
 }
 
@@ -825,7 +978,7 @@ body.dark .seo-content {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
 }
 
-body.dark .content-card {
+html.dark .content-card {
     background: #1a1a1a;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
@@ -843,7 +996,7 @@ body.dark .content-card {
     text-align: left;
 }
 
-body.dark .content-card h3 {
+html.dark .content-card h3 {
     color: #fff;
 }
 
@@ -854,7 +1007,7 @@ body.dark .content-card h3 {
     text-align: left;
 }
 
-body.dark .content-card p {
+html.dark .content-card p {
     color: #bbb;
 }
 
@@ -870,7 +1023,7 @@ body.dark .content-card p {
     text-align: left;
 }
 
-body.dark .content-card ul li {
+html.dark .content-card ul li {
     border-bottom-color: #333;
 }
 

@@ -5,10 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Terms and Conditions | Rock Paper Scissors Game</title>
+  <title>Terms and Conditions | Rock Paper Scissors Online Game</title>
 
   <!-- SEO -->
-  <meta name="description" content="Read the terms and conditions for using the Rock Paper Scissors game website.">
+  <meta name="description"
+    content="Read the complete terms and conditions for using the Rock Paper Scissors Online game and website. Understand your rights and responsibilities as a user.">
   <meta name="author" content="Niranjan Kumar Singh">
   <meta name="google-adsense-account" content="ca-pub-4208665414964925">
 
@@ -25,7 +26,8 @@
   <link rel="stylesheet" href="style.css?v=2" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" />
 
-  <!-- Google AdSense -->
+  <!-- Dark Mode Init -->
+  <script src="dark-mode-init.js"></script>
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4208665414964925"
@@ -53,21 +55,51 @@
       line-height: 1.8;
     }
 
+    main p {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+
     main h2 {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+      color: #081B31;
+    }
+
+    main ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    main li {
+      margin-bottom: 0.4rem;
     }
 
     main a {
-      color: #081B31;
+      color: #f50057;
       text-decoration: underline;
     }
 
-    body.dark {
+    .last-updated {
+      background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+      border-radius: 0.8rem;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    html.dark {
       background-color: #121212;
       color: #ddd;
     }
 
-    body.dark main {
+    html.dark main {
       background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
       border: 2px solid #444;
       border-left: 6px solid #ff4081;
@@ -75,13 +107,22 @@
       box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
     }
 
-    body.dark main h2,
-    body.dark main a {
-      color: #fff;
+    html.dark main p,
+    html.dark main ul {
+      color: #bbb;
     }
 
-    body.dark main a {
+    html.dark main h2 {
       color: #90caf9;
+    }
+
+    html.dark main a {
+      color: #ff4081;
+    }
+
+    html.dark .last-updated {
+      background: linear-gradient(135deg, #1a2a3a, #2a1a2a);
+      color: #aaa;
     }
 
     .footer {
@@ -105,52 +146,164 @@
       color: #ffca28;
     }
 
-    body.dark .footer {
+    html.dark .footer {
       background-color: #222;
       color: #ddd;
     }
 
-    body.dark .footer a {
+    html.dark .footer a {
       color: #ccc;
     }
 
-    body.dark .footer a:hover {
+    html.dark .footer a:hover {
       color: #ffca28;
     }
   </style>
 </head>
 
 <body>
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="logo">
+      <a href="/">✌️ RPS Online</a>
+    </div>
+    <nav class="main-nav" style="display: flex; gap: 1rem; align-items: center;">
+      <button id="dark-mode-toggle-nav" class="dark-mode-toggle"
+        style="background: none; border: none; font-size: 1.2rem; cursor: pointer; padding: 0.2rem; margin-right: 1rem;"
+        aria-label="Toggle Dark Mode">🌙</button>
+      <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; align-items: center;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/strategies.html">Strategies</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
   <h1>Terms and Conditions</h1>
   <main>
 
+    <div class="last-updated">📅 Last Updated: <strong>March 31, 2026</strong></div>
+
+    <p>Please read these Terms and Conditions carefully before using the <strong>Rock Paper Scissors Online</strong>
+      website and game (collectively referred to as the "Service"), operated by <strong>Niranjan Kumar Singh</strong>
+      ("we," "us," or "our"). By accessing or using any part of the Service, you agree to be bound by these Terms and
+      Conditions. If you do not agree to all of these terms, please discontinue use of the Service immediately.</p>
+
     <h2>1. Acceptance of Terms</h2>
-    <p>By using this website and game, you agree to comply with and be bound by these terms and conditions. If you
-      disagree with any part of these terms, please discontinue use immediately.</p>
+    <p>By accessing, browsing, or using this website in any way, you confirm that you are at least 13 years of age (or
+      meet the digital consent age in your country) and that you have read, understood, and agree to be bound by these
+      Terms and Conditions, as well as our <a href="/privacy.html">Privacy Policy</a> and
+      <a href="/disclaimer.html">Disclaimer</a>, which are incorporated by reference.</p>
+    <p>We reserve the right to update, modify, or replace any part of these Terms at any time. Changes will be posted
+      on this page with an updated "Last Updated" date. Continued use of the Service after any changes constitutes
+      your acceptance of the revised terms.</p>
 
-    <h2>2. Permitted Use</h2>
-    <p>You agree to use this website only for lawful purposes and in a way that does not infringe on the rights or
-      restrict the use of others.</p>
+    <h2>2. Description of Service</h2>
+    <p>Rock Paper Scissors Online provides a free, browser-based implementation of the classic Rock Paper Scissors
+      hand game. The Service includes:</p>
+    <ul>
+      <li>A playable game interface with Casual and Hard Mode AI opponents</li>
+      <li>Score tracking and win streak features stored in browser Local Storage</li>
+      <li>A Strategy Guide with educational gaming content</li>
+      <li>Progressive Web App (PWA) functionality for offline play</li>
+      <li>A "Challenge a Friend" feature via shareable URL parameters</li>
+    </ul>
+    <p>The Service is provided free of charge and is funded by non-intrusive Google AdSense advertisements. We reserve
+      the right to modify, suspend, or discontinue any part of the Service at any time without notice.</p>
 
-    <h2>3. Intellectual Property</h2>
-    <p>All content, graphics, game logic, and UI elements are the property of Niranjan Kumar Singh unless otherwise
-      stated. Unauthorized use is prohibited.</p>
+    <!-- Ad Unit -->
+    <div style="margin: 2rem 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4208665414964925"
+        data-ad-slot="1712602490" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
 
-    <h2>4. Disclaimer</h2>
-    <p>The game is provided "as is" with no warranties of any kind. We do not guarantee availability, accuracy, or
-      fitness for a particular purpose.</p>
+    <h2>3. Permitted Use</h2>
+    <p>You agree to use this website and game only for lawful purposes and in a way that does not infringe on the rights
+      of others or restrict their use and enjoyment of the Service. Permitted use includes:</p>
+    <ul>
+      <li>Playing the game for personal entertainment</li>
+      <li>Sharing the game URL with friends, family, or social networks</li>
+      <li>Reading and sharing content from the Strategy Guide for personal educational purposes</li>
+      <li>Contacting us through the Contact page for legitimate inquiries</li>
+    </ul>
 
-    <h2>5. Modifications</h2>
-    <p>We reserve the right to update or change these terms at any time. Continued use of the site after such changes
-      constitutes acceptance.</p>
+    <h2>4. Prohibited Activities</h2>
+    <p>You agree not to engage in any of the following prohibited activities:</p>
+    <ul>
+      <li><strong>Scraping or data harvesting:</strong> Using automated tools, bots, scrapers, or crawlers to extract
+        content from the site without our prior written consent.</li>
+      <li><strong>Ad interference:</strong> Clicking on advertisements artificially, using ad-injection tools, or
+        attempting to manipulate ad impressions or clicks.</li>
+      <li><strong>Reverse engineering:</strong> Attempting to decompile, disassemble, or reverse-engineer any
+        proprietary game logic or algorithms.</li>
+      <li><strong>Impersonation:</strong> Pretending to be us, our team, or any affiliated party.</li>
+      <li><strong>Malicious use:</strong> Attempting to introduce viruses, worms, trojans, or any other malicious code
+        that could damage or disrupt the Service.</li>
+      <li><strong>Commercial exploitation:</strong> Using the game, its logic, design, or content for commercial
+        purposes without explicit written permission.</li>
+    </ul>
 
-    <h2>6. Limitation of Liability</h2>
-    <p>Under no circumstances shall we be liable for any direct, indirect, or incidental damages resulting from your use
-      of this game or website.</p>
+    <h2>5. Intellectual Property</h2>
+    <p>All content on this website — including but not limited to game mechanics, JavaScript source code, CSS design
+      systems, written articles, UI/UX design, and graphic assets — is the intellectual property of
+      <strong>Niranjan Kumar Singh</strong> unless otherwise explicitly credited or licensed.</p>
+    <p>Third-party libraries used in this project (such as <code>canvas-confetti</code> from jsDelivr) are licensed
+      under their respective open-source licenses (MIT) and full attribution is acknowledged.</p>
+    <p>You may not copy, reproduce, redistribute, publicly display, modify, or create derivative works from any
+      portion of this website's content without prior written permission from the owner, except as permitted under
+      applicable fair use provisions.</p>
 
-    <h2>7. Contact</h2>
-    <p>For questions regarding these terms, contact us at <a
-        href="mailto:niranjansingh1419@gmail.com">niranjansingh1419@gmail.com</a>.</p>
+    <h2>6. Advertising Terms</h2>
+    <p>Google AdSense advertisements are displayed on this website. By using this Service, you acknowledge that:</p>
+    <ul>
+      <li>Advertisements are served by Google LLC and are not controlled by us.</li>
+      <li>You will not artificially click on or interact with advertisements.</li>
+      <li>Ad content is the sole responsibility of the advertiser and Google.</li>
+      <li>You may opt out of personalized ads through <a href="https://www.google.com/settings/ads"
+          target="_blank" rel="noopener noreferrer">Google's Ad Settings</a>.</li>
+    </ul>
+
+    <h2>7. Disclaimer of Warranties</h2>
+    <p>The Service is provided on an "as is" and "as available" basis without any warranties of any kind, either
+      express or implied. We do not warrant that the Service will be uninterrupted, error-free, secure, or free of
+      viruses or other harmful components. We make no warranties regarding the accuracy of game outcomes, scores, or
+      AI behavior.</p>
+
+    <h2>8. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, <strong>Niranjan Kumar Singh</strong> and any affiliated
+      parties shall not be liable for any direct, indirect, incidental, special, exemplary, or consequential damages
+      whatsoever — including but not limited to loss of data, profits, or goodwill — arising out of or in connection
+      with your use of (or inability to use) the Service, even if we have been advised of the possibility of such
+      damages.</p>
+
+    <h2>9. External Links</h2>
+    <p>Our website may contain links to third-party websites or services that are not owned or controlled by us. We
+      have no control over the content, privacy policies, or practices of any third-party websites. We strongly advise
+      you to review the privacy policy of every site you visit. We bear no responsibility for any content posted on
+      or any damage caused by any third-party website linked from ours.</p>
+
+    <h2>10. Children's Use</h2>
+    <p>The Service is appropriate for general audiences including children. However, by using this Service, parents and
+      guardians acknowledge that advertising content is served algorithmically by Google and that supervision of
+      younger children is advisable. We do not knowingly collect personal information from children under 13. If you
+      believe a child under 13 has provided us personal information, please contact us and we will delete it promptly.
+    </p>
+
+    <h2>11. Governing Law</h2>
+    <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of <strong>India</strong>,
+      without regard to its conflict of law provisions. Any disputes arising under these terms shall be subject to the
+      exclusive jurisdiction of the courts of India. If you are accessing the Service from outside India, you do so at
+      your own initiative and are responsible for compliance with local laws.</p>
+
+    <h2>12. Contact Information</h2>
+    <p>If you have any questions, concerns, or requests relating to these Terms and Conditions, please contact us:</p>
+    <ul>
+      <li>📧 <strong>Email:</strong> <a href="mailto:niranjansingh1419@gmail.com">niranjansingh1419@gmail.com</a></li>
+      <li>📝 <strong>Contact Form:</strong> <a href="/contact.html">Contact Page</a></li>
+    </ul>
 
     <p><a href="/" aria-label="Go back to the game">← Back to Game</a></p>
   </main>
@@ -163,17 +316,13 @@
     <div class="footer-nav">
       <a href="/about.html">About Us</a> |
       <a href="/privacy.html">Privacy Policy</a> |
-      <a href="/terms.html">Terms & Conditions</a> |
+      <a href="/terms.html">Terms &amp; Conditions</a> |
+      <a href="/disclaimer.html">Disclaimer</a> |
       <a href="/sitemap.xml" target="_blank">Sitemap</a>
     </div>
   </footer>
 
-  <script>
-    // Apply saved dark mode preference
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
-    }
-  </script>
+  <script src="ui.js"></script>
 </body>
 
 </html>

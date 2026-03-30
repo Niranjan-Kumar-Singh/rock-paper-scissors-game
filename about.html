@@ -4,27 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Professional Rock Paper Scissors Game</title>
+    <title>About Us | Rock Paper Scissors Online — Our Story, Mission & Team</title>
     <meta name="description"
-        content="Learn more about the team behind the best online Rock Paper Scissors game and our mission to provide clean, fun web experiences.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+        content="Learn about the creator of Rock Paper Scissors Online, our mission to build premium free web games, the technology used, and frequently asked questions about the project.">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <!-- Dark Mode Init -->
+    <script src="dark-mode-init.js"></script>
 
     <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="KKxnRIS1ajvXZobsLsOcPIogecH-EXAqO1SbS430nac" />
+    <meta name="google-site-verification" content="KKxnRIS1ajvXZobsLsOcPIogecH-EXAqO1SbS430nac">
     <meta name="google-adsense-account" content="ca-pub-4208665414964925">
 
     <!-- Canonical Link -->
-    <link rel="canonical" href="https://rockpaperscissor-niranjan.vercel.app/about.html" />
+    <link rel="canonical" href="https://rockpaperscissor-niranjan.vercel.app/about.html">
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4208665414964925"
         crossorigin="anonymous"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Us — Rock Paper Scissors Online",
+      "url": "https://rockpaperscissor-niranjan.vercel.app/about.html",
+      "author": {
+        "@type": "Person",
+        "name": "Niranjan Kumar Singh"
+      }
+    }
+    </script>
+
     <style>
         .about-container {
             max-width: 800px;
             margin: 3rem auto;
-            padding: 2rem;
+            padding: 2.5rem;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 2rem;
@@ -39,38 +58,235 @@
             color: #444;
         }
 
-        body.dark .about-container {
+        .about-container h2 {
+            font-size: 1.6rem;
+            margin: 2rem 0 1rem;
+            color: #081B31;
+        }
+
+        .about-container h3 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.5rem;
+            color: #f50057;
+        }
+
+        .about-container ul, .about-container ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .about-container li {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item {
+            border-left: 4px solid #f50057;
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+            color: #081B31;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #081B31;
+            color: white;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            margin: 0.3rem 0.2rem;
+            font-weight: 600;
+        }
+
+        html.dark .about-container {
             background: rgba(30, 30, 30, 0.8);
             color: #ddd;
         }
 
-        body.dark .about-container p {
+        html.dark .about-container p,
+        html.dark .about-container ul,
+        html.dark .about-container ol {
             color: #bbb;
+        }
+
+        html.dark .about-container h2 {
+            color: #90caf9;
+        }
+
+        html.dark .about-container h3 {
+            color: #ff4081;
+        }
+
+        html.dark .faq-item strong {
+            color: #ddd;
+        }
+
+        html.dark .tech-badge {
+            background: #333;
         }
     </style>
 </head>
 
 <body>
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="/">✌️ RPS Online</a>
+        </div>
+        <nav class="main-nav" style="display: flex; gap: 1rem; align-items: center;">
+            <button id="dark-mode-toggle-nav" class="dark-mode-toggle"
+                style="background: none; border: none; font-size: 1.2rem; cursor: pointer; padding: 0.2rem; margin-right: 1rem;"
+                aria-label="Toggle Dark Mode">🌙</button>
+            <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; align-items: center;">
+                <li><a href="/">Home</a></li>
+                <li><a href="/strategies.html">Strategies</a></li>
+                <li><a href="/about.html" class="active">About Us</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <h1>About the Project</h1>
     <main>
         <div class="about-container">
-            <p>Welcome to <strong>Rock Paper Scissors Online</strong>, a passion project dedicated to bringing classic,
-                simple joy to the modern web. Our mission is to build high-quality, lightweight, and accessible games
-                that anyone can enjoy instantly.</p>
+            <p>Welcome to <strong>Rock Paper Scissors Online</strong>, a personal project built with curiosity and
+                passion. The goal is simple: bring a classic, timeless game to the modern web — beautifully designed,
+                lightweight, and accessible to everyone. No downloads, no sign-ups, no paywalls.</p>
 
-            <p>This game was designed by <strong>Niranjan Kumar Singh</strong>, a web developer focused on creating
-                premium user experiences. We believe that even the simplest games deserve great design and smooth
-                performance.</p>
+            <p>This game was designed and built by <strong>Niranjan Kumar Singh</strong>, a self-taught web
+                development enthusiast who loves learning by building real projects from scratch.</p>
+
+            <!-- Author Bio Section (E-E-A-T) -->
+            <div class="author-bio content-card"
+                style="margin: 2.5rem 0; padding: 1.5rem; background: inherit; border-radius: 1rem; display: flex; align-items: center; gap: 1.5rem; border-left: 5px solid #081B31; flex-wrap: wrap;">
+                <img src="/images/author-avatar.png" alt="Niranjan Kumar Singh — Creator of RPS Online"
+                    style="width: 85px; height: 85px; border-radius: 50%; object-fit: cover; background: linear-gradient(135deg, #081B31, #f50057); padding: 3px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                <div style="flex: 1; min-width: 200px;">
+                    <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem; color: inherit;">Niranjan Kumar Singh</h3>
+                    <p style="margin-bottom: 0; font-size: 0.95rem; color: inherit; line-height: 1.7;">
+                        A passionate self-learner who explores web development by building real projects. Niranjan
+                        created this game entirely from scratch to practice and grow his skills in HTML, CSS,
+                        JavaScript, and PWA development. He believes the best way to learn is to build something
+                        you're proud of — and this is one of those projects. 🚀
+                    </p>
+                </div>
+            </div>
 
             <h2>Why We Built This</h2>
-            <p>In a world of complex, heavy applications, we wanted to return to the basics. This project serves as a
-                showcase of modern web technologies—using Vanilla JavaScript, CSS3 animations, and PWA (Progressive Web
-                App) capabilities to ensure you can play even when you're offline.</p>
+            <p>In a world of complex, heavy applications demanding downloads and account creation, we wanted to return
+                to the basics. Rock Paper Scissors Online exists to give anyone — regardless of their device, internet
+                speed, or technical capability — access to a fun, fair, and beautifully designed game in seconds.</p>
+
+            <p>This project serves as a showcase of modern web standards: using Vanilla JavaScript for game logic, CSS3
+                animations for a smooth visual experience, and PWA (Progressive Web App) capabilities so you can even
+                play offline once you've visited the site.</p>
+
+            <h2>Our Mission and Values</h2>
+            <p>We are guided by three core values in everything we build:</p>
+            <ul>
+                <li><strong>Accessibility First:</strong> The game works on any device, in any browser, with or without
+                    JavaScript enabled for basic functionality. We implement ARIA labels, keyboard navigation, and
+                    semantic HTML throughout.</li>
+                <li><strong>Performance Obsessed:</strong> We avoid unnecessary dependencies and frameworks to keep
+                    pages loading in under a second. Clean code produces fast experiences.</li>
+                <li><strong>Transparency:</strong> We are upfront about how the game's AI works, what data we collect
+                    (none, for gameplay), and how advertising on this site helps us fund future development.</li>
+            </ul>
+
+            <h2>Technology Behind the Game</h2>
+            <p>The entire game is powered by a lean, purpose-built technology stack — no frameworks, no bloat:</p>
+            <div style="margin-bottom: 1.5rem;">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3 Animations</span>
+                <span class="tech-badge">Vanilla JavaScript</span>
+                <span class="tech-badge">Progressive Web App (PWA)</span>
+                <span class="tech-badge">Service Workers</span>
+                <span class="tech-badge">Local Storage</span>
+                <span class="tech-badge">Canvas Confetti</span>
+                <span class="tech-badge">Vercel Hosting</span>
+            </div>
+            <p>The Hard Mode AI uses a <strong>frequency tracking algorithm</strong> — it records your previous moves
+                and uses conditional probability to predict your next throw. It's the same principle taught in
+                university-level game theory courses, implemented in about 50 lines of clean JavaScript.</p>
 
             <h2>Our Commitment to Quality</h2>
-            <p>We are constantly improving the game based on user feedback. Whether it's adding "Dark Mode" for
-                late-night gaming or implementing "Best of" round selectors, every feature is built with the player in
-                mind.</p>
+            <p>We are constantly improving the game based on user feedback. Over the life of this project, we have
+                shipped the following quality-of-life improvements based directly on player requests:</p>
+            <ol>
+                <li>Added <strong>Dark Mode</strong> for late-night gaming sessions, with the preference saved via
+                    Local Storage so it persists between visits.</li>
+                <li>Implemented <strong>Best of 3, 5, and 7</strong> round selectors so players can choose their
+                    preferred match length.</li>
+                <li>Added a <strong>Confetti celebration</strong> on match wins to make victories feel genuinely
+                    rewarding.</li>
+                <li>Built a <strong>Challenge a Friend</strong> feature with custom URLs so you can set target scores
+                    and share them with friends.</li>
+                <li>Designed and published a full <a href="/strategies.html"
+                        style="color: #f50057; font-weight: 600; text-decoration: none;">Strategy Guide</a> to add
+                    genuine educational value beyond just the game itself.</li>
+            </ol>
+
+            <!-- Ad Unit -->
+            <div style="margin: 2rem 0; text-align: center;">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4208665414964925"
+                    data-ad-slot="1712602490" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <strong>Q: Is this game completely free to play?</strong>
+                <p>Yes. Rock Paper Scissors Online is 100% free and always will be. You do not need to create an
+                    account, pay a subscription, or make any in-app purchases. The site is funded through non-intrusive
+                    Google AdSense advertisements.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: How does the Hard Mode AI work?</strong>
+                <p>The Hard Mode AI tracks your historical choice frequency across the current session. If you've thrown
+                    Rock 60% of the time, the AI will bias its prediction toward Paper. This "exploitative" strategy
+                    mirrors real-world competitive game theory and provides a genuinely challenging opponent to practice
+                    against.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: Does the game collect any of my personal data?</strong>
+                <p>No personal data is collected or transmitted. All game state, including your high score, win streak,
+                    and dark mode preference, is stored exclusively in your browser's Local Storage and never sent
+                    anywhere. Please see our <a href="/privacy.html"
+                        style="color: #f50057;">Privacy Policy</a> for complete details.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: Can I play offline?</strong>
+                <p>Yes! This site is built as a Progressive Web App (PWA). Once you have visited the site at least
+                    once, a Service Worker caches key resources so the game can be played even when you are offline or
+                    on a poor connection.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: Can I add this game to my phone's home screen?</strong>
+                <p>Absolutely. On Android, tap the browser's menu and select "Add to Home Screen." On iOS Safari,
+                    tap the Share icon and then "Add to Home Screen." The game will appear as an app icon and launch
+                    in full-screen mode, just like a native app.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: How can I report a bug or suggest a new feature?</strong>
+                <p>We would love to hear from you. Head over to our <a href="/contact.html"
+                        style="color: #f50057;">Contact page</a> and send us a message. We typically respond within
+                    24–48 hours and take every piece of feedback seriously.</p>
+            </div>
 
             <p><a href="/" style="color: #f50057; font-weight: 600; text-decoration: none;">← Back to Game</a></p>
         </div>
@@ -84,16 +300,13 @@
         <div class="footer-nav">
             <a href="/about.html">About Us</a> |
             <a href="/privacy.html">Privacy Policy</a> |
-            <a href="/terms.html">Terms & Conditions</a> |
+            <a href="/terms.html">Terms &amp; Conditions</a> |
+            <a href="/disclaimer.html">Disclaimer</a> |
             <a href="/sitemap.xml" target="_blank">Sitemap</a>
         </div>
     </footer>
 
-    <script>
-        if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark");
-        }
-    </script>
+    <script src="ui.js"></script>
 </body>
 
 </html>
